@@ -1,7 +1,8 @@
 # Projet-5
-pour que dump fonctionne il faut :
+pour que dump fonctionne avec pgAdmin 4 il faut :
 
-- faire un backup sur une première bdd ( dans mon cas DataBaseP5)
-- changer l'extension du fichier en .backup une fois que le fichier est crée
-- crée une autre bdd
-- puis sélectionner restore sur l'autre base de donner puis sélectionner le fichier .backup
+- crée une BDD vide 
+- clique droit sur la BDD 
+- Slectionner " Restore " Format :  Custom or tar, attribuer un User a la Bdd ( optionel ).
+- selectionner le fichier ".backup" 
+- Puis la Bdd apparais dans l'onglet Schemas --> public --> tables 
