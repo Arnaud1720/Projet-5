@@ -1,0 +1,121 @@
+
+
+
+INSERT INTO public.adresse (id_adresse, numero_telepehone, nom_rue, numero_rue, code_postale, ville) VALUES (1, 621478858, 'Rue de nimes', 1, 30900, 'Nimes');
+INSERT INTO public.adresse (id_adresse, numero_telepehone, nom_rue, numero_rue, code_postale, ville) VALUES (2, 214785455, 'Rue de paris', 25, 75000, 'Paris');
+INSERT INTO public.adresse (id_adresse, numero_telepehone, nom_rue, numero_rue, code_postale, ville) VALUES (3, 556875214, 'Rue de bordeaux', 5, 33000, 'Bordeaux');
+INSERT INTO public.adresse (id_adresse, numero_telepehone, nom_rue, numero_rue, code_postale, ville) VALUES (4, 752142144, 'Rue de lyon', 78, 69000, 'Lyon');
+INSERT INTO public.adresse (id_adresse, numero_telepehone, nom_rue, numero_rue, code_postale, ville) VALUES (5, 642121147, 'Rue de paris', 23, 75000, 'Paris');
+
+
+--
+-- Data for Name: aidememoire; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.aidememoire (recette_pizza) VALUES ('Recette1');
+INSERT INTO public.aidememoire (recette_pizza) VALUES ('Recette2');
+INSERT INTO public.aidememoire (recette_pizza) VALUES ('Recette3');
+INSERT INTO public.aidememoire (recette_pizza) VALUES ('Recette4');
+INSERT INTO public.aidememoire (recette_pizza) VALUES ('Recette5');
+
+
+--
+-- Data for Name: client; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.client (client_id, nom, prenom, date_inscription, id_adresse) VALUES (1, 'SALETTE', 'Patrick', '2017-03-25', 1);
+INSERT INTO public.client (client_id, nom, prenom, date_inscription, id_adresse) VALUES (2, 'ZANNI', 'Pascal', '2017-04-12', 2);
+INSERT INTO public.client (client_id, nom, prenom, date_inscription, id_adresse) VALUES (3, 'CASTANIED', 'Marie-pierre', '2017-05-21', 3);
+INSERT INTO public.client (client_id, nom, prenom, date_inscription, id_adresse) VALUES (4, 'SHMIT', 'Marc', '2017-08-30', 4);
+INSERT INTO public.client (client_id, nom, prenom, date_inscription, id_adresse) VALUES (5, 'GOSLING', 'James', '2017-12-09', 5);
+
+
+--
+-- Data for Name: commande; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.commande (commande_id, montant_total, resume_commande, mode_paimment, client_id, id_livreur, id_pizzaiollo) VALUES (1, 35, 'Article, Article, Article, ', 'Carte bleu', 1, 1, 2);
+INSERT INTO public.commande (commande_id, montant_total, resume_commande, mode_paimment, client_id, id_livreur, id_pizzaiollo) VALUES (2, 60, 'Article, Article, Article, Article, Article, Article, ', 'Espece', 2, 2, 2);
+INSERT INTO public.commande (commande_id, montant_total, resume_commande, mode_paimment, client_id, id_livreur, id_pizzaiollo) VALUES (3, 80, 'Article, Article, Article, Article, Article, Article, Article', 'Carte bleu ', 3, 1, 1);
+INSERT INTO public.commande (commande_id, montant_total, resume_commande, mode_paimment, client_id, id_livreur, id_pizzaiollo) VALUES (4, 110, 'Article, Article, Article, Article, Article, Article, Article, Article, Article, Article, Article, Article, Article, Article, Article', 'Espece', 4, 3, 1);
+INSERT INTO public.commande (commande_id, montant_total, resume_commande, mode_paimment, client_id, id_livreur, id_pizzaiollo) VALUES (5, 15, 'Article, Article', 'Espece', 5, 3, 3);
+
+
+--
+-- Data for Name: employe; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.employe (id_employer, date_emboche, prenom, login, motdepasse, role, pizzeria_id, id_adresse) VALUES (1, '2016-04-12', 'Marc', 'Marc_01', 'Marc01', 'Pizzaiollo', 1, 1);
+INSERT INTO public.employe (id_employer, date_emboche, prenom, login, motdepasse, role, pizzeria_id, id_adresse) VALUES (2, '2016-04-14', 'Stephan', 'Stephan2', 'Steph02', 'Pizzaiollo', 1, 1);
+INSERT INTO public.employe (id_employer, date_emboche, prenom, login, motdepasse, role, pizzeria_id, id_adresse) VALUES (3, '2016-04-11', 'Sylvie', 'Syl03', 'Syl3', 'Livreur', 1, 2);
+INSERT INTO public.employe (id_employer, date_emboche, prenom, login, motdepasse, role, pizzeria_id, id_adresse) VALUES (4, '2017-04-27', 'Claire', 'Claire04', 'Claire04', 'Livreur', 2, 2);
+
+
+--
+-- Data for Name: facturation; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.facturation (factureid, numerofacture, id_adresse, client_id) VALUES (1, 1, 1, 1);
+INSERT INTO public.facturation (factureid, numerofacture, id_adresse, client_id) VALUES (2, 2, 2, 2);
+INSERT INTO public.facturation (factureid, numerofacture, id_adresse, client_id) VALUES (3, 3, 1, 2);
+INSERT INTO public.facturation (factureid, numerofacture, id_adresse, client_id) VALUES (4, 4, 3, 3);
+INSERT INTO public.facturation (factureid, numerofacture, id_adresse, client_id) VALUES (10, 12, 4, 4);
+
+
+--
+-- Data for Name: ingrediant; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.ingrediant (idingrediant, matierepremiere, stockunitaire, ingrediant_restant) VALUES (1, 'Salade', 3, 3);
+INSERT INTO public.ingrediant (idingrediant, matierepremiere, stockunitaire, ingrediant_restant) VALUES (2, 'Poulet', 2, 2);
+INSERT INTO public.ingrediant (idingrediant, matierepremiere, stockunitaire, ingrediant_restant) VALUES (3, 'Tomate', 1, 1);
+INSERT INTO public.ingrediant (idingrediant, matierepremiere, stockunitaire, ingrediant_restant) VALUES (4, 'Mozzarella', 4, 4);
+INSERT INTO public.ingrediant (idingrediant, matierepremiere, stockunitaire, ingrediant_restant) VALUES (5, 'Fromage', 5, 5);
+
+
+--
+-- Data for Name: ligne_commande; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.ligne_commande (pizza_id, commande_id) VALUES (1, 1);
+INSERT INTO public.ligne_commande (pizza_id, commande_id) VALUES (1, 2);
+INSERT INTO public.ligne_commande (pizza_id, commande_id) VALUES (1, 3);
+INSERT INTO public.ligne_commande (pizza_id, commande_id) VALUES (1, 4);
+
+
+--
+-- Data for Name: ligne_recette; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.ligne_recette (pizza_id, idingrediant, quentite) VALUES (1, 1, 12);
+INSERT INTO public.ligne_recette (pizza_id, idingrediant, quentite) VALUES (1, 2, 10);
+INSERT INTO public.ligne_recette (pizza_id, idingrediant, quentite) VALUES (2, 2, 10);
+INSERT INTO public.ligne_recette (pizza_id, idingrediant, quentite) VALUES (3, 3, 5);
+
+
+--
+-- Data for Name: pizza; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.pizza (pizza_id, prixpizza, nom, recette_pizza) VALUES (1, 20, 'PIZZA 4 STAGIONI', 'Recette1');
+INSERT INTO public.pizza (pizza_id, prixpizza, nom, recette_pizza) VALUES (2, 12, 'PIZZA CAPRICCIOSA', 'Recette2');
+INSERT INTO public.pizza (pizza_id, prixpizza, nom, recette_pizza) VALUES (3, 30, 'PIZZA MARGHERITA', 'Recette3');
+INSERT INTO public.pizza (pizza_id, prixpizza, nom, recette_pizza) VALUES (4, 45, 'PIZZA MARINARA', 'Recette4');
+INSERT INTO public.pizza (pizza_id, prixpizza, nom, recette_pizza) VALUES (5, 25, 'PIZZA ROMANA', 'Recette5');
+
+
+--
+-- Data for Name: point_de_vente; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.point_de_vente (pizzeria_id, date_creation, recette_pizzeria, id_adresse) VALUES (1, '2016-02-02', 20, 1);
+INSERT INTO public.point_de_vente (pizzeria_id, date_creation, recette_pizzeria, id_adresse) VALUES (2, '2016-08-12', 12, 2);
+
+
+--
+-- Data for Name: stock; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.stock (idingrediant, adresse_pizzeria, quantite) VALUES (1, 1, '12');
+INSERT INTO public.stock (idingrediant, adresse_pizzeria, quantite) VALUES (2, 1, '11');
+INSERT INTO public.stock (idingrediant, adresse_pizzeria, quantite) VALUES (2, 2, '14');
